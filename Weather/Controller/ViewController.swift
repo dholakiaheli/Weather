@@ -40,6 +40,8 @@ let APIKey = "bb15dc0d441f171472c0b3dd70b3fb7c"
         self.latitude = coordinates.latitude
         let storyboardObj = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboardObj.instantiateViewController(withIdentifier: "CurrentWeatherViewController") as! CurrentWeatherViewController
+        vc.lat = self.latitude
+        vc.long = self.longitude
         self.navigationController?.pushViewController(vc, animated: true)
 
     }
