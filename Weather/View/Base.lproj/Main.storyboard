@@ -26,7 +26,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="weatherFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
         <!--Current Weather View Controller-->
         <scene sceneID="fZb-li-Ty8">
             <objects>
-                <viewController storyboardIdentifier="CurrentWeatherViewController" id="JFh-LL-FET" customClass="CurrentWeatherViewController" customModule="weatherFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentWeatherViewController" id="JFh-LL-FET" customClass="CurrentWeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgo-bd-BoT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,21 +73,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt7-Rq-aM4">
+                                <rect key="frame" x="20" y="94" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="m2E-N3-bZO" firstAttribute="top" secondItem="mFi-Tu-Bau" secondAttribute="top" constant="140" id="4K4-Od-1dt"/>
+                            <constraint firstItem="mFi-Tu-Bau" firstAttribute="trailing" secondItem="gt7-Rq-aM4" secondAttribute="trailing" constant="20" id="Vg4-E9-mva"/>
                             <constraint firstItem="DIe-9F-eAQ" firstAttribute="top" secondItem="m2E-N3-bZO" secondAttribute="bottom" constant="40" id="WUV-sv-Ker"/>
                             <constraint firstItem="m2E-N3-bZO" firstAttribute="leading" secondItem="mFi-Tu-Bau" secondAttribute="leading" constant="20" id="WfZ-bn-124"/>
                             <constraint firstItem="mFi-Tu-Bau" firstAttribute="trailing" secondItem="m2E-N3-bZO" secondAttribute="trailing" constant="20" id="YSX-gk-3bq"/>
                             <constraint firstItem="mFi-Tu-Bau" firstAttribute="trailing" secondItem="DIe-9F-eAQ" secondAttribute="trailing" constant="20" id="evg-7U-uuk"/>
                             <constraint firstItem="DIe-9F-eAQ" firstAttribute="leading" secondItem="mFi-Tu-Bau" secondAttribute="leading" constant="20" id="jVl-a6-Jt2"/>
+                            <constraint firstItem="gt7-Rq-aM4" firstAttribute="leading" secondItem="mFi-Tu-Bau" secondAttribute="leading" constant="20" id="q6H-3t-Xxe"/>
+                            <constraint firstItem="gt7-Rq-aM4" firstAttribute="top" secondItem="mFi-Tu-Bau" secondAttribute="top" constant="50" id="xdM-t4-xWC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mFi-Tu-Bau"/>
                     </view>
                     <connections>
                         <outlet property="feelslike" destination="m2E-N3-bZO" id="wcN-Fh-lSB"/>
-                        <outlet property="temp" destination="DIe-9F-eAQ" id="AfS-8i-B4q"/>
+                        <outlet property="location" destination="gt7-Rq-aM4" id="bXw-fo-FNf"/>
+                        <outlet property="temp" destination="DIe-9F-eAQ" id="jog-i7-en6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNE-5n-w4K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -16,6 +16,7 @@ class CurrentWeatherViewController: UIViewController {
     var long : Double?
     @IBOutlet weak var feelslike: UILabel!
     @IBOutlet weak var temp: UILabel!
+    @IBOutlet weak var location: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         getCurrentWeather()
@@ -32,9 +33,12 @@ class CurrentWeatherViewController: UIViewController {
                 guard let data = data else { return}
                do {
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
-                print(jsonResult)
+                print(jsonResult!)
                 DispatchQueue.main.async {
-                    
+                    if let locationobj = jsonResult?["name"] as? NSString{
+                        self.location.text = "Selected Location: \(locationobj)"
+                    }
+                 
                     if let mainobj = jsonResult?["main"] as? NSDictionary {
                         if let tempValue = mainobj["feels_like"] as? Double {
                             self.feelslike.text = "Feels Like: \(tempValue)"
